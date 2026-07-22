@@ -84,6 +84,24 @@ export function getGrammar(): Grammar {
   // numbers ("W11001"). Grid must precede fire so "N95W18855" isn't split.
   const number = `(?<number>(\\d+-?\\d*)|([N|S|E|W]\\d{1,3}[N|S|E|W]\\d{1,6})|(${fireNumber}))(?=\\D)`;
 
+  // Named county/state/US highways: the road-class words plus a short
+  // designation are the street name itself — "County Road X", "State Road 27",
+  // "US Highway 51" — with no separate street type. Without this branch the
+  // informal parse (not end-anchored) matches "County" + type "Rd" and
+  // silently drops the designation. Letter designations (Wisconsin county
+  // trunks: X, KK) must end the segment and must not be a state code, so
+  // "123 County Rd Ada OK" and "123 County Rd WI" parse exactly as before.
+  const namedHighway = `
+    (?:county|state|u\\.?s\\.?)
+    [^\\w,]+
+    (?:road|rd|highway|hwy|route|rte)
+    [^\\w,]+
+    (?:
+      \\d{1,4}\\b
+      |
+      (?!(?:${state}))[a-z]{1,3}(?=\\s*(?:$|,))
+    )`;
+
   const street = `
     (?:
       (?:(?<street_0>${direct})\\W+
@@ -92,6 +110,9 @@ export function getGrammar(): Grammar {
       |
       (?:(?<prefix_0>${direct})\\W+)?
       (?:
+        (?<street_4>${namedHighway})
+        (?:[^\\w,]+(?<suffix_4>${direct})\\b)?
+        |
         (?<street_1>[^,]*\\d)
         (?:[^\\w,]*(?<suffix_1>${direct})\\b)
         |

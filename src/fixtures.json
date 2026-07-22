@@ -677,5 +677,55 @@
     "prefix": "W",
     "street": "5678",
     "suffix": "N"
+  },
+  "W11001 County Road X": {
+    "number": "W11001",
+    "street": "County Road X"
+  },
+  "W 11001 County Road X": {
+    "number": "W11001",
+    "street": "County Road X"
+  },
+  "N5678 State Road 27": {
+    "number": "N5678",
+    "street": "State Road 27"
+  },
+  "W11001 County Road KK": {
+    "number": "W11001",
+    "street": "County Road KK"
+  },
+  "123 US Highway 51": {
+    "number": "123",
+    "street": "US Highway 51"
+  },
+  "123 N County Road X": {
+    "number": "123",
+    "prefix": "N",
+    "street": "County Road X"
+  },
+  "123 Main St": {
+    "number": "123",
+    "street": "Main",
+    "type": "St"
+  },
+  "123 County Rd, Ada, OK": {
+    "number": "123",
+    "street": "County",
+    "type": "Rd",
+    "city": "Ada",
+    "state": "OK"
+  },
+  "123 County Rd Ada OK": {
+    "number": "123",
+    "street": "County",
+    "type": "Rd",
+    "city": "Ada",
+    "state": "OK"
+  },
+  "123 County Rd WI": {
+    "number": "123",
+    "street": "County",
+    "city": "Rd",
+    "state": "WI"
   }
 }
