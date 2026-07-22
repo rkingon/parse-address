@@ -47,7 +47,8 @@ Every result is a `ParsedAddress`; unmatched inputs return `null`.
   to their canonical USPS forms (`Highway` → `Hwy`, `North` → `N`, `California`
   → `CA`).
 - **Handles the awkward cases** — secondary units (`Suite 500`, `Apt 2`, `#3`),
-  ZIP+4, grid numbers (`N95W18855`), fractional addresses, and intersections.
+  ZIP+4, grid numbers (`N95W18855`), directional house numbers (`W11001`,
+  `W 11001`), fractional addresses, and intersections.
 - **Dual ESM / CJS** with types for both.
 
 ## Usage

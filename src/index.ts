@@ -106,6 +106,11 @@ function normalize(parts: Record<string, string | undefined> | null): ParsedAddr
     }
   }
 
+  // Spaced fire numbers ("W 11001") collapse to their canonical fused form.
+  if (result.number) {
+    result.number = result.number.replace(/^([nsew])\s+(?=\d)/i, '$1');
+  }
+
   for (const [key, table] of Object.entries(NORMALIZE_MAP)) {
     const value = result[key];
     if (value && table[value.toLowerCase()]) {

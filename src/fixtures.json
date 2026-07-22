@@ -580,5 +580,102 @@
     "city": "Bloomfield Hills",
     "state": "MI",
     "zip": "48304"
+  },
+  "W 11001 County Road X, Stanley, WI 54768": {
+    "number": "W11001",
+    "street": "County Road X",
+    "city": "Stanley",
+    "state": "WI",
+    "zip": "54768"
+  },
+  "W11001 County Road X, Stanley, WI 54768": {
+    "number": "W11001",
+    "street": "County Road X",
+    "city": "Stanley",
+    "state": "WI",
+    "zip": "54768"
+  },
+  "N5678 State Road 27, Ladysmith, WI 54848": {
+    "number": "N5678",
+    "street": "State Road 27",
+    "city": "Ladysmith",
+    "state": "WI",
+    "zip": "54848"
+  },
+  "N 95th St, Milwaukee, WI": {
+    "prefix": "N",
+    "street": "95th",
+    "type": "St",
+    "city": "Milwaukee",
+    "state": "WI"
+  },
+  "N 123rd St, Milwaukee, WI": {
+    "prefix": "N",
+    "street": "123rd",
+    "type": "St",
+    "city": "Milwaukee",
+    "state": "WI"
+  },
+  "123 N 400 E, Salt Lake City, UT": {
+    "number": "123",
+    "prefix": "N",
+    "street": "400",
+    "suffix": "E",
+    "city": "Salt Lake City",
+    "state": "UT"
+  },
+  "S12 Main St, Springfield, IL": {
+    "street": "S12 Main",
+    "type": "St",
+    "city": "Springfield",
+    "state": "IL"
+  },
+  "N400 Main St, Provo, UT": {
+    "street": "N400 Main",
+    "type": "St",
+    "city": "Provo",
+    "state": "UT"
+  },
+  "E404 Error Rd, Nowhere, AZ": {
+    "street": "E404 Error",
+    "type": "Rd",
+    "city": "Nowhere",
+    "state": "AZ"
+  },
+  "N95 th St, Milwaukee, WI": {
+    "street": "N95 th",
+    "type": "St",
+    "city": "Milwaukee",
+    "state": "WI"
+  },
+  "N95-th St, Milwaukee, WI": {
+    "street": "N95-th",
+    "type": "St",
+    "city": "Milwaukee",
+    "state": "WI"
+  },
+  "N95/th St, Milwaukee, WI": {
+    "street": "N95th",
+    "type": "St",
+    "city": "Milwaukee",
+    "state": "WI"
+  },
+  "W12 County Road X, Stanley, WI": {
+    "street": "W12 County",
+    "type": "Rd"
+  },
+  "W123 County Road X, Stanley, WI": {
+    "street": "W123 County",
+    "type": "Rd"
+  },
+  "W 123 County Road X, Stanley, WI": {
+    "prefix": "W",
+    "street": "123 County",
+    "type": "Rd"
+  },
+  "W 5678 N Main St, Somecity, WI": {
+    "prefix": "W",
+    "street": "5678",
+    "suffix": "N"
   }
 }
