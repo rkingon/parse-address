@@ -68,8 +68,19 @@ export function getGrammar(): Grammar {
   const fraction = `\\d+\\/\\d+`;
   const zip = `(?<zip>\\d{5})[- ]?(?<plus4>\\d{4})?`;
   const corner = `(?:\\band\\b|\\bat\\b|&|\\@)`;
-  // Plain house numbers ("123", "123-5") or grid numbers ("N95W18855").
-  const number = `(?<number>(\\d+-?\\d*)|([N|S|E|W]\\d{1,3}[N|S|E|W]\\d{1,6}))(?=\\D)`;
+  // Wisconsin rural "fire numbers": a single directional letter fused to the
+  // house number ("W11001", "N5678"), optionally written with a space
+  // ("W 11001"). Guards keep numbered street names out: the digits must not
+  // run into letters ("N95th" is a street, not a number), and the spaced form
+  // needs 4+ digits and no trailing directional (both to spare "123 N 400 E"
+  // grid streets, whose numbers run ≤3 digits).
+  const fireNumber = `
+    [NSEW]\\d{2,6}(?![a-z])
+    |
+    [NSEW]\\s\\d{4,6}(?!\\w)(?!\\s+(?:${direct})(?!\\w))`;
+  // Plain house numbers ("123", "123-5"), grid numbers ("N95W18855"), or fire
+  // numbers ("W11001"). Grid must precede fire so "N95W18855" isn't split.
+  const number = `(?<number>(\\d+-?\\d*)|([N|S|E|W]\\d{1,3}[N|S|E|W]\\d{1,6})|(${fireNumber}))(?=\\D)`;
 
   const street = `
     (?:
