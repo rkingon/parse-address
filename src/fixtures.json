@@ -727,5 +727,44 @@
     "street": "County",
     "city": "Rd",
     "state": "WI"
+  },
+  "123 County Road X N": {
+    "number": "123",
+    "street": "County Road X",
+    "suffix": "N"
+  },
+  "W11001 County Road X N": {
+    "number": "W11001",
+    "street": "County Road X",
+    "suffix": "N"
+  },
+  "County Road KK W": {
+    "street": "County Road KK",
+    "suffix": "W"
+  },
+  "123 County Route A": {
+    "number": "123",
+    "street": "County Route A"
+  },
+  "123 US Highway 51 S": {
+    "number": "123",
+    "street": "US Highway 51",
+    "suffix": "S"
+  },
+  "123 County Rd W, Madison, WI": {
+    "number": "123",
+    "street": "County",
+    "type": "Rd",
+    "suffix": "W",
+    "city": "Madison",
+    "state": "WI"
+  },
+  "County Road X and Main St, Madison, WI": {
+    "street1": "County Road X",
+    "street2": "Main",
+    "type2": "St",
+    "city": "Madison",
+    "state": "WI",
+    "type1": "St"
   }
 }

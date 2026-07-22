@@ -89,8 +89,12 @@ export function getGrammar(): Grammar {
   // "US Highway 51" — with no separate street type. Without this branch the
   // informal parse (not end-anchored) matches "County" + type "Rd" and
   // silently drops the designation. Letter designations (Wisconsin county
-  // trunks: X, KK) must end the segment and must not be a state code, so
-  // "123 County Rd Ada OK" and "123 County Rd WI" parse exactly as before.
+  // trunks: X, KK) are fenced three ways so everything else parses exactly as
+  // before: not a state code ("123 County Rd WI" keeps state WI), not a
+  // directional ("County Rd W" keeps suffix W — lettered trunks that collide
+  // with compass letters fall back), and the segment must end after them —
+  // end, comma, or a trailing directional ("County Road X N") — so
+  // "123 County Rd Ada OK" keeps city Ada.
   const namedHighway = `
     (?:county|state|u\\.?s\\.?)
     [^\\w,]+
@@ -99,7 +103,10 @@ export function getGrammar(): Grammar {
     (?:
       \\d{1,4}\\b
       |
-      (?!(?:${state}))[a-z]{1,3}(?=\\s*(?:$|,))
+      (?!(?:${state}))
+      (?!(?:${direct})(?![\\w]))
+      [a-z]{1,3}
+      (?=\\s*(?:$|,|(?:${direct})(?![\\w])))
     )`;
 
   const street = `
