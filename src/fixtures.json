@@ -623,5 +623,59 @@
     "suffix": "E",
     "city": "Salt Lake City",
     "state": "UT"
+  },
+  "S12 Main St, Springfield, IL": {
+    "street": "S12 Main",
+    "type": "St",
+    "city": "Springfield",
+    "state": "IL"
+  },
+  "N400 Main St, Provo, UT": {
+    "street": "N400 Main",
+    "type": "St",
+    "city": "Provo",
+    "state": "UT"
+  },
+  "E404 Error Rd, Nowhere, AZ": {
+    "street": "E404 Error",
+    "type": "Rd",
+    "city": "Nowhere",
+    "state": "AZ"
+  },
+  "N95 th St, Milwaukee, WI": {
+    "street": "N95 th",
+    "type": "St",
+    "city": "Milwaukee",
+    "state": "WI"
+  },
+  "N95-th St, Milwaukee, WI": {
+    "street": "N95-th",
+    "type": "St",
+    "city": "Milwaukee",
+    "state": "WI"
+  },
+  "N95/th St, Milwaukee, WI": {
+    "street": "N95th",
+    "type": "St",
+    "city": "Milwaukee",
+    "state": "WI"
+  },
+  "W12 County Road X, Stanley, WI": {
+    "street": "W12 County",
+    "type": "Rd"
+  },
+  "W123 County Road X, Stanley, WI": {
+    "street": "W123 County",
+    "type": "Rd"
+  },
+  "W 123 County Road X, Stanley, WI": {
+    "prefix": "W",
+    "street": "123 County",
+    "type": "Rd"
+  },
+  "W 5678 N Main St, Somecity, WI": {
+    "prefix": "W",
+    "street": "5678",
+    "suffix": "N"
   }
 }

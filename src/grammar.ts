@@ -70,12 +70,14 @@ export function getGrammar(): Grammar {
   const corner = `(?:\\band\\b|\\bat\\b|&|\\@)`;
   // Wisconsin rural "fire numbers": a single directional letter fused to the
   // house number ("W11001", "N5678"), optionally written with a space
-  // ("W 11001"). Guards keep numbered street names out: the digits must not
-  // run into letters ("N95th" is a street, not a number), and the spaced form
-  // needs 4+ digits and no trailing directional (both to spare "123 N 400 E"
-  // grid streets, whose numbers run ≤3 digits).
+  // ("W 11001"). Deliberately narrow — anything this doesn't match falls back
+  // to the previous parse, never a new rejection. Both forms require 4+
+  // digits: shorter runs collide with directional street names ("S12 Main
+  // St", "N400 Main St", Utah's "123 N 400 E") and typo'd house numbers. The
+  // digits must not run into letters ("N95th" is a street, not a number), and
+  // the spaced form must not be followed by a directional (grid streets).
   const fireNumber = `
-    [NSEW]\\d{2,6}(?![a-z])
+    [NSEW]\\d{4,6}(?![a-z])
     |
     [NSEW]\\s\\d{4,6}(?!\\w)(?!\\s+(?:${direct})(?!\\w))`;
   // Plain house numbers ("123", "123-5"), grid numbers ("N95W18855"), or fire
