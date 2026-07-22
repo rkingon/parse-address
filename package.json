@@ -40,11 +40,15 @@
     "Geo::StreetAddress::US",
     "typescript"
   ],
-  "author": "",
+  "author": "Roi Kingon <rkingon@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rkingon/parse-address.git"
+  },
+  "homepage": "https://github.com/rkingon/parse-address#readme",
+  "bugs": {
+    "url": "https://github.com/rkingon/parse-address/issues"
   },
   "dependencies": {
     "xregexp": "^5.1.2"
