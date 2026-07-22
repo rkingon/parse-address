@@ -1,6 +1,6 @@
 {
   "name": "@rkingon/parse-address",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "US street address parser. Modern TypeScript rebuild of parse-address (Geo::StreetAddress::US).",
   "type": "module",
   "main": "./dist/index.cjs",
